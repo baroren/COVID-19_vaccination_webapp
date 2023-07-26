@@ -1,9 +1,7 @@
 import React, { useState } from 'react';
-import FormField from './FormField';
 import Form from 'react-bootstrap/Form';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
+import Card from 'react-bootstrap/Card';
 
 const RegistrationForm = () => {
     const [formData, setFormData] = useState({
@@ -47,109 +45,125 @@ const RegistrationForm = () => {
     };
 
     return (
-        <Form onSubmit={handleSubmit} className="my-4">
-            <Row>
-                <Col md={6}>
-                    <FormField
-                        label="First Name"
+        <Card className="p-4">
+            <h2 className="mb-4">COVID-19 Vaccination Registration</h2>
+            <Form onSubmit={handleSubmit}>
+                <Form.Group className="mb-3" controlId="firstName">
+                    <Form.Label>First Name</Form.Label>
+                    <Form.Control
                         type="text"
                         name="firstName"
                         value={formData.firstName}
-                        onChange={handleInputChange}
+                        onChange={(e) => handleInputChange(e.target.name, e.target.value)}
                         required
                     />
-                    <FormField
-                        label="Last Name"
+                </Form.Group>
+
+                <Form.Group className="mb-3" controlId="lastName">
+                    <Form.Label>Last Name</Form.Label>
+                    <Form.Control
                         type="text"
                         name="lastName"
                         value={formData.lastName}
-                        onChange={handleInputChange}
+                        onChange={(e) => handleInputChange(e.target.name, e.target.value)}
                         required
                     />
-                    <FormField
-                        label="Date of Birth"
+                </Form.Group>
+
+                <Form.Group className="mb-3" controlId="dateOfBirth">
+                    <Form.Label>Date of Birth</Form.Label>
+                    <Form.Control
                         type="date"
                         name="dateOfBirth"
                         value={formData.dateOfBirth}
-                        onChange={handleInputChange}
+                        onChange={(e) => handleInputChange(e.target.name, e.target.value)}
                         required
                     />
-                    {/* Add other form fields here */}
-                </Col>
-                <Col md={6}>
-                    <FormField
-                        label="Address"
+                </Form.Group>
+
+                <Form.Group className="mb-3" controlId="address">
+                    <Form.Label>Address</Form.Label>
+                    <Form.Control
                         type="text"
                         name="address"
                         value={formData.address}
-                        onChange={handleInputChange}
+                        onChange={(e) => handleInputChange(e.target.name, e.target.value)}
                         required
                     />
-                    <FormField
-                        label="City"
+                </Form.Group>
+
+                <Form.Group className="mb-3" controlId="city">
+                    <Form.Label>City</Form.Label>
+                    <Form.Control
                         type="text"
                         name="city"
                         value={formData.city}
-                        onChange={handleInputChange}
+                        onChange={(e) => handleInputChange(e.target.name, e.target.value)}
                         required
                     />
-                    <FormField
-                        label="Zip Code"
+                </Form.Group>
+
+                <Form.Group className="mb-3" controlId="zipCode">
+                    <Form.Label>Zip Code</Form.Label>
+                    <Form.Control
                         type="text"
                         name="zipCode"
                         value={formData.zipCode}
-                        onChange={handleInputChange}
+                        onChange={(e) => handleInputChange(e.target.name, e.target.value)}
                     />
-                    <FormField
-                        label="Landline"
+                </Form.Group>
+
+                <Form.Group className="mb-3" controlId="landline">
+                    <Form.Label>Landline</Form.Label>
+                    <Form.Control
                         type="text"
                         name="landline"
                         value={formData.landline}
-                        onChange={handleInputChange}
+                        onChange={(e) => handleInputChange(e.target.name, e.target.value)}
                     />
-                    <FormField
-                        label="Cell Phone"
+                </Form.Group>
+
+                <Form.Group className="mb-3" controlId="cellPhone">
+                    <Form.Label>Cell Phone</Form.Label>
+                    <Form.Control
                         type="text"
                         name="cellPhone"
                         value={formData.cellPhone}
-                        onChange={handleInputChange}
+                        onChange={(e) => handleInputChange(e.target.name, e.target.value)}
                     />
-                </Col>
-            </Row>
-            <Row>
-                <Col>
+                </Form.Group>
+
+                <Form.Group className="mb-3" controlId="infected">
                     <Form.Check
                         label="Infected by COVID-19"
                         name="infected"
                         checked={formData.infected}
                         onChange={(e) => handleCheckboxChange(e.target.name, e.target.checked)}
                     />
-                </Col>
-            </Row>
-            <Row>
-                <Col>
-                    <Form.Group controlId="conditions">
-                        <Form.Label>Previous Conditions</Form.Label>
-                        <Form.Control
-                            as="select"
-                            name="conditions"
-                            multiple
-                            value={formData.conditions}
-                            onChange={(e) => {
-                                const selectedOptions = Array.from(e.target.selectedOptions, (option) => option.value);
-                                handleMultiSelectChange(e.target.name, selectedOptions);
-                            }}
-                        >
-                            <option value="diabetes">Diabetes</option>
-                            <option value="cardio">Cardio-Vascular problems</option>
-                            <option value="allergies">Allergies</option>
-                            {/* Add more options here */}
-                        </Form.Control>
-                    </Form.Group>
-                </Col>
-            </Row>
-            <Button type="submit" variant="primary">Submit</Button>
-        </Form>
+                </Form.Group>
+
+                <Form.Group controlId="conditions">
+                    <Form.Label>Previous Conditions</Form.Label>
+                    <Form.Control
+                        as="select"
+                        name="conditions"
+                        multiple
+                        value={formData.conditions}
+                        onChange={(e) => {
+                            const selectedOptions = Array.from(e.target.selectedOptions, (option) => option.value);
+                            handleMultiSelectChange(e.target.name, selectedOptions);
+                        }}
+                    >
+                        <option value="diabetes">Diabetes</option>
+                        <option value="cardio">Cardio-Vascular problems</option>
+                        <option value="allergies">Allergies</option>
+                        {/* Add more options here */}
+                    </Form.Control>
+                </Form.Group>
+
+                <Button type="submit" variant="primary" className="mt-3">Submit</Button>
+            </Form>
+        </Card>
     );
 };
 

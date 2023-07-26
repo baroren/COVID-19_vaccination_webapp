@@ -1,38 +1,52 @@
-.App {
-  text-align: center;
+/* Additional custom styles for the form */
+.card {
+  max-width: 500px;
+  margin: 0 auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.form-label {
+  font-weight: 600;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.btn-primary {
+  background-color: #007bff;
+  border-color: #007bff;
 }
 
-.App-header {
-  background-color: #282c34;
+.btn-primary:hover {
+  background-color: #0056b3;
+  border-color: #0056b3;
+}
+/* Additional custom styles for the LandingPage */
+.landing-page {
+  background-color: #f8f9fa;
   min-height: 100vh;
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.header {
+  text-align: center;
+  padding: 40px 0;
+  color: #007bff;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.header h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+.header p {
+  font-size: 1.5rem;
+  margin-bottom: 40px;
+}
+
+.header button {
+  font-size: 1.2rem;
+  padding: 10px 30px;
+  border-radius: 30px;
+  background-color: #007bff;
+  border-color: #007bff;
 }
