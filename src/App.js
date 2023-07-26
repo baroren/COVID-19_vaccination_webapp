@@ -5,6 +5,7 @@ import RegistrationPage from './RegistrationPage';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import RegistrationForm from "./RegistrationForm";
 import LandingPage from "./LandingPage";
+import SummaryPage from "./SummaryPage";
 
 
 
@@ -16,7 +17,8 @@ const App = () => {
                 <Route path="/" element={<LandingPage />} />
 
                 <Route path="/Register" element={<RegistrationForm />} />
-                {/* Add more routes for other pages as you build them */}
+                <Route path="/Summary" element={<SummaryPage />} />
+
             </Routes>
         </Router>
     );
