@@ -2,6 +2,10 @@ import React, { useState } from 'react';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
+import './RegistrationForm.css';
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
+import {Container} from "react-bootstrap";
 
 const RegistrationForm = () => {
     const [formData, setFormData] = useState({
@@ -45,94 +49,131 @@ const RegistrationForm = () => {
     };
 
     return (
-        <Card className="p-4">
+        <Container>
+        <Card className="p-4 registration-form">
             <h2 className="mb-4">COVID-19 Vaccination Registration</h2>
             <Form onSubmit={handleSubmit}>
-                <Form.Group className="mb-3" controlId="firstName">
-                    <Form.Label>First Name</Form.Label>
-                    <Form.Control
-                        type="text"
-                        name="firstName"
-                        value={formData.firstName}
-                        onChange={(e) => handleInputChange(e.target.name, e.target.value)}
-                        required
-                    />
-                </Form.Group>
+                <Row>
+                    <Col md={6}>
+                        {/* First Name */}
+                        <Form.Group className="mb-3" controlId="firstName">
+                            <Form.Label>First Name</Form.Label>
+                            <Form.Control
+                                type="text"
+                                name="firstName"
+                                value={formData.firstName}
+                                onChange={(e) => handleInputChange(e.target.name, e.target.value)}
+                                required
+                                placeholder="Enter your first name"
+                            />
+                        </Form.Group>
+                    </Col>
+                    <Col md={6}>
+                        {/* Last Name */}
+                        <Form.Group className="mb-3" controlId="lastName">
+                            <Form.Label>Last Name</Form.Label>
+                            <Form.Control
+                                type="text"
+                                name="lastName"
+                                value={formData.lastName}
+                                onChange={(e) => handleInputChange(e.target.name, e.target.value)}
+                                required
+                                placeholder="Enter your last name"
+                            />
+                        </Form.Group>
+                    </Col>
+                </Row>
 
-                <Form.Group className="mb-3" controlId="lastName">
-                    <Form.Label>Last Name</Form.Label>
-                    <Form.Control
-                        type="text"
-                        name="lastName"
-                        value={formData.lastName}
-                        onChange={(e) => handleInputChange(e.target.name, e.target.value)}
-                        required
-                    />
-                </Form.Group>
+                <Row>
+                    <Col md={6}>
+                        {/* Date of Birth */}
+                        <Form.Group className="mb-3" controlId="dateOfBirth">
+                            <Form.Label>Date of Birth</Form.Label>
+                            <Form.Control
+                                type="date"
+                                name="dateOfBirth"
+                                value={formData.dateOfBirth}
+                                onChange={(e) => handleInputChange(e.target.name, e.target.value)}
+                                required
+                            />
+                        </Form.Group>
+                    </Col>
+                    <Col md={6}>
+                        {/* City */}
+                        <Form.Group className="mb-3" controlId="city">
+                            <Form.Label>City</Form.Label>
+                            <Form.Control
+                                type="text"
+                                name="city"
+                                value={formData.city}
+                                onChange={(e) => handleInputChange(e.target.name, e.target.value)}
+                                required
+                                placeholder="Enter your city"
+                            />
+                        </Form.Group>
+                    </Col>
+                </Row>
 
-                <Form.Group className="mb-3" controlId="dateOfBirth">
-                    <Form.Label>Date of Birth</Form.Label>
-                    <Form.Control
-                        type="date"
-                        name="dateOfBirth"
-                        value={formData.dateOfBirth}
-                        onChange={(e) => handleInputChange(e.target.name, e.target.value)}
-                        required
-                    />
-                </Form.Group>
+                <Row>
+                    <Col md={6}>
+                        {/* Address */}
+                        <Form.Group className="mb-3" controlId="address">
+                            <Form.Label>Address</Form.Label>
+                            <Form.Control
+                                type="text"
+                                name="address"
+                                value={formData.address}
+                                onChange={(e) => handleInputChange(e.target.name, e.target.value)}
+                                required
+                                placeholder="Enter your address"
+                            />
+                        </Form.Group>
+                    </Col>
+                    <Col md={6}>
+                        {/* Zip Code */}
+                        <Form.Group className="mb-3" controlId="zipCode">
+                            <Form.Label>Zip Code</Form.Label>
+                            <Form.Control
+                                type="text"
+                                name="zipCode"
+                                value={formData.zipCode}
+                                onChange={(e) => handleInputChange(e.target.name, e.target.value)}
+                                placeholder="Enter your zip code"
+                            />
+                        </Form.Group>
+                    </Col>
+                </Row>
 
-                <Form.Group className="mb-3" controlId="address">
-                    <Form.Label>Address</Form.Label>
-                    <Form.Control
-                        type="text"
-                        name="address"
-                        value={formData.address}
-                        onChange={(e) => handleInputChange(e.target.name, e.target.value)}
-                        required
-                    />
-                </Form.Group>
+                <Row>
+                    <Col md={6}>
+                        {/* Landline */}
+                        <Form.Group className="mb-3" controlId="landline">
+                            <Form.Label>Landline</Form.Label>
+                            <Form.Control
+                                type="text"
+                                name="landline"
+                                value={formData.landline}
+                                onChange={(e) => handleInputChange(e.target.name, e.target.value)}
+                                placeholder="Enter your landline number"
+                            />
+                        </Form.Group>
+                    </Col>
+                    <Col md={6}>
+                        {/* Cell Phone */}
+                        <Form.Group className="mb-3" controlId="cellPhone">
+                            <Form.Label>Cell Phone</Form.Label>
+                            <Form.Control
+                                type="text"
+                                name="cellPhone"
+                                value={formData.cellPhone}
+                                onChange={(e) => handleInputChange(e.target.name, e.target.value)}
+                                placeholder="Enter your cell phone number"
+                            />
+                        </Form.Group>
+                    </Col>
+                </Row>
 
-                <Form.Group className="mb-3" controlId="city">
-                    <Form.Label>City</Form.Label>
-                    <Form.Control
-                        type="text"
-                        name="city"
-                        value={formData.city}
-                        onChange={(e) => handleInputChange(e.target.name, e.target.value)}
-                        required
-                    />
-                </Form.Group>
-
-                <Form.Group className="mb-3" controlId="zipCode">
-                    <Form.Label>Zip Code</Form.Label>
-                    <Form.Control
-                        type="text"
-                        name="zipCode"
-                        value={formData.zipCode}
-                        onChange={(e) => handleInputChange(e.target.name, e.target.value)}
-                    />
-                </Form.Group>
-
-                <Form.Group className="mb-3" controlId="landline">
-                    <Form.Label>Landline</Form.Label>
-                    <Form.Control
-                        type="text"
-                        name="landline"
-                        value={formData.landline}
-                        onChange={(e) => handleInputChange(e.target.name, e.target.value)}
-                    />
-                </Form.Group>
-
-                <Form.Group className="mb-3" controlId="cellPhone">
-                    <Form.Label>Cell Phone</Form.Label>
-                    <Form.Control
-                        type="text"
-                        name="cellPhone"
-                        value={formData.cellPhone}
-                        onChange={(e) => handleInputChange(e.target.name, e.target.value)}
-                    />
-                </Form.Group>
-
+                {/* Infected by COVID-19 */}
                 <Form.Group className="mb-3" controlId="infected">
                     <Form.Check
                         label="Infected by COVID-19"
@@ -142,6 +183,7 @@ const RegistrationForm = () => {
                     />
                 </Form.Group>
 
+                {/* Previous Conditions */}
                 <Form.Group controlId="conditions">
                     <Form.Label>Previous Conditions</Form.Label>
                     <Form.Control
@@ -164,6 +206,8 @@ const RegistrationForm = () => {
                 <Button type="submit" variant="primary" className="mt-3">Submit</Button>
             </Form>
         </Card>
+    </Container>
+
     );
 };
 
