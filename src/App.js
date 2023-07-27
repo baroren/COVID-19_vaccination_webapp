@@ -1,11 +1,11 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import AppNavbar from './AppNavBar';
-import RegistrationPage from './RegistrationPage';
+import AppNavbar from './components/AppNavBar';
+import RegistrationPage from './components/RegistrationPage';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import RegistrationForm from "./RegistrationForm";
-import LandingPage from "./LandingPage";
-import SummaryPage from "./SummaryPage";
+import RegistrationForm from "./components/RegistrationForm";
+import LandingPage from "./components/LandingPage";
+import SummaryPage from "./components/SummaryPage";
 
 
 

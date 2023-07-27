@@ -1,6 +1,6 @@
 import React from 'react';
 import Button from 'react-bootstrap/Button';
-import './LandingPage.css';
+import './css/LandingPage.css';
 import { TypeAnimation } from 'react-type-animation';
 
 const LandingPage = () => {
@@ -12,7 +12,7 @@ const LandingPage = () => {
                     <div className="col-md-6">
                         {/* Image */}
                         <img
-                            src={require ("./images/vacc.png")}  // Replace with the actual path to your image
+                            src={require ("../images/vacc.png")}  // Replace with the actual path to your image
                             alt="Vaccine"
                             className="img-fluid rounded"
                             width={"300 "}
