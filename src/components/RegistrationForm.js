@@ -183,7 +183,6 @@ const RegistrationForm = () => {
                     />
                 </Form.Group>
 
-                {/* Previous Conditions */}
                 <Form.Group controlId="conditions">
                     <Form.Label>Previous Conditions</Form.Label>
                     <Form.Control
@@ -200,10 +199,25 @@ const RegistrationForm = () => {
                         <option value="cardio">Cardio-Vascular problems</option>
                         <option value="allergies">Allergies</option>
                         {/* Add more options here */}
+                        <option value="other">Other</option>
                     </Form.Control>
                 </Form.Group>
 
-                <Button type="submit" variant="primary" className="mt-3">Submit</Button>
+                {formData.conditions.includes('other') && (
+                    <Form.Group controlId="otherCondition">
+                        <Form.Label>Other Condition</Form.Label>
+                        <Form.Control
+                            type="text"
+                            name="otherCondition"
+                            value={formData.otherCondition}
+                            onChange={(e) => handleInputChange(e.target.name, e.target.value)}
+                        />
+                    </Form.Group>
+                )}
+
+                <Button type="submit" variant="primary" className="mt-3">
+                    Submit
+                </Button>
             </Form>
         </Card>
     </Container>
